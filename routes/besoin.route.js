@@ -1,0 +1,104 @@
+const express = require('express');
+const app = express();
+const besoinRoute = express.Router();
+
+// besoin model
+let Besoin = require('../model/besoin');
+
+// Add besoin
+besoinRoute.route('/add-besoin').post((req, res, next) => {
+    Besoin.create(req.body, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+});
+
+// Get all besoin
+besoinRoute.route('/besoins').get((req, res) => {
+  Besoin.find((error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
+
+// Get besoins by Status
+besoinRoute.route('/besoins/:status').get((req, res) => {
+  Besoin.find((error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      var response = [];  
+        response = data.filter(function(besoin){
+          if(besoin.status_name === req.params.status){
+            return besoin;
+          }
+        });
+      res.json(response)
+    }
+  })
+})
+
+// Get besoins by reference
+besoinRoute.route('/besoins/ByReference/:reference').get((req, res) => {
+  Besoin.find((error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      var response = [];  
+        response = data.filter(function(besoin){
+          if(besoin.ref_offre === req.params.reference){
+            return besoin;
+          }
+        });
+      res.json(response)
+    }
+  })
+})
+
+// Get single besoin
+besoinRoute.route('/read-besoin/:id').get((req, res) => {
+  Besoin.findById(req.params.id, (error, data) => {
+    if (error) {
+      return next(error)
+    } else {
+      res.json(data)
+    }
+  })
+})
+
+
+// Update besoin
+besoinRoute.route('/update-besoin/:id').put((req, res, next) => {
+  Besoin.findByIdAndUpdate(req.params.id, {
+    $set: req.body
+  }, (error, data) => {
+    if (error) {
+      return next(error);
+      console.log(error)
+    } else {
+      res.json(data)
+      console.log('besoin successfully updated!')
+    }
+  })
+})
+
+// Delete besoin
+besoinRoute.route('/delete-besoin/:id').delete((req, res, next) => {
+  Besoin.findByIdAndRemove(req.params.id, (error, data) => {
+    if (error) {
+      return next(error);
+    } else {
+      res.status(200).json({
+        msg: data
+      })
+    }
+  })
+})
+
+module.exports = besoinRoute;
