@@ -34,7 +34,7 @@ app.use('/api', besoinRoute);
 // Create port
 const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
-  console.log('Connected to port ' + port)
+  console.log('Connected to port ' + port+ 'server'+server)
 })
 
 // Find 404 and hand over to error handler
@@ -44,6 +44,7 @@ app.use((req, res, next) => {
 
 // error handler
 app.use(function (err, req, res, next) {
+  console.log(next);
   console.error(err.message);
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);
