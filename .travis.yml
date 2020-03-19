@@ -1,20 +1,13 @@
 language: node_js
-matrix:
-    include:
-      - os: linux
-        env: DIST=linux
-        node_js:
-        - "12"
-        - "13"
-      - os: windows
-        env: DIST=windows
-        node_js:
-        - "12"
-        - "13"
-      - os: osx
-        env: DIST=mac
-        node_js:
-        - "12"
-        - "13"
+os:
+  - linux
+  - osx
+  - windows
+node_js:
+  - 12
+addons:
+  apt:
+    packages:
+      - mongodb
 script:
   - npm run start
