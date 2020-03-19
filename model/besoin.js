@@ -10,7 +10,7 @@ let Besoin = new Schema({
     start_date:Date,
     creation_date:Date,
    MANAGER_NAME: String,
-    cr_name: String,
+    CR_NAME: String,
     REF_OFFRE: String,
     TECHNO_ENVIRONNEMENT: String,
     status_name: String,
