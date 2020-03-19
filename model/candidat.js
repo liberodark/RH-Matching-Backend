@@ -10,7 +10,7 @@ let Candidat = new Schema({
     status_date: Date,
     telephone_number: String,
     post_name: String,
-    contacter_via: String,
+    CONTACTER_VIA: String,
     client: String,
     experience: String,
    MANAGER_NAME: String,
