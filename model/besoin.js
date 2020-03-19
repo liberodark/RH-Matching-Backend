@@ -13,7 +13,7 @@ let Besoin = new Schema({
     CR_NAME: String,
     REF_OFFRE: String,
     TECHNO_ENVIRONNEMENT: String,
-    status_name: String,
+    STATUS_NAME: String,
     candidatAfectedList:[]
   }, {
     collection: 'besoins'

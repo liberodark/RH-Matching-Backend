@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 let Candidat = new Schema({
     id: String,
-    first_name: String,
-    last_name: String,
+    FIRST_NAME: String,
+    LAST_NAME: String,
     statusCandidat: String,
     MAIL_ADRESSE: String,
     STATUS_DATE: Date,
