@@ -9,7 +9,7 @@ let Candidat = new Schema({
     mail_adresse: String,
     status_date: Date,
     telephone_number: String,
-    post_name: String,
+    POST_NAME: String,
     CONTACTER_VIA: String,
     client: String,
     experience: String,

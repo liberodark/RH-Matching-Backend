@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 let Besoin = new Schema({
     id: String,
-    post_name: String,
+    POST_NAME: String,
     client: String,
     experience:Number,
     max_salary:Number,
