@@ -10,4 +10,5 @@ addons:
     packages:
       - mongodb
 script:
+  - systemctl start mongodb
   - npm run start
