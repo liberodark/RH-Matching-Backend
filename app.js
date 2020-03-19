@@ -18,16 +18,16 @@ mongoose.connect(dataBaseConfig.db, {
 )
 
 // Set up express js port
-const candidatRoute = require('../backendMean/routes/candidat.route')
-const besoinRoute = require('../backendMean/routes/besoin.route')
+const candidatRoute = require('./routes/candidat.route')
+const besoinRoute = require('./routes/besoin.route')
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'dist/angular8-httpclient-tutorial')));
-app.use('/', express.static(path.join(__dirname, 'dist/angular8-httpclient-tutorial')));
+app.use(express.static(path.join(__dirname, '/var/www/rh-matching')));
+app.use('/', express.static(path.join(__dirname, '/var/www/rh-matching')));
 app.use('/api', candidatRoute);
 app.use('/api', besoinRoute);
 
