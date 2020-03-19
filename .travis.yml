@@ -8,5 +8,5 @@ addons:
     packages:
       - mongodb
 script:
-  - systemctl start mongodb
+  - sudo systemctl start mongodb
   - npm run start
