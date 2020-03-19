@@ -16,7 +16,7 @@ let Candidat = new Schema({
     manager_name: String,
     cr_name: String,
     ko_tag: String,
-    ref_offre: [],
+    REF_OFFRE: [],
     comment: String,
    mobility: String,
    disponibility_date: Date,

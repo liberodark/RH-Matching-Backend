@@ -11,8 +11,8 @@ let Besoin = new Schema({
     creation_date:Date,
     manager_name: String,
     cr_name: String,
-    ref_offre: String,
-    techno_environnement: String,
+    REF_OFFRE: String,
+    TECHNO_ENVIRONNEMENT: String,
     status_name: String,
     candidatAfectedList:[]
   }, {

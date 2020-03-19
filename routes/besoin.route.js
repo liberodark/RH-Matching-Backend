@@ -51,7 +51,7 @@ besoinRoute.route('/besoins/ByReference/:reference').get((req, res) => {
     } else {
       var response = [];  
         response = data.filter(function(besoin){
-          if(besoin.ref_offre === req.params.reference){
+          if(besoin.REF_OFFRE === req.params.reference){
             return besoin;
           }
         });
