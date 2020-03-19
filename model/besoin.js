@@ -9,7 +9,7 @@ let Besoin = new Schema({
     max_salary:Number,
     start_date:Date,
     creation_date:Date,
-    manager_name: String,
+   MANAGER_NAME: String,
     cr_name: String,
     REF_OFFRE: String,
     TECHNO_ENVIRONNEMENT: String,

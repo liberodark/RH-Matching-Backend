@@ -13,7 +13,7 @@ let Candidat = new Schema({
     contacter_via: String,
     client: String,
     experience: String,
-    manager_name: String,
+   MANAGER_NAME: String,
     cr_name: String,
     ko_tag: String,
     REF_OFFRE: [],
