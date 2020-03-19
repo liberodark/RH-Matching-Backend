@@ -19,7 +19,7 @@ let Candidat = new Schema({
     REF_OFFRE: [],
     comment: String,
    mobility: String,
-   disponibility_date: Date,
+   DISPONIBILITY_DATE: Date,
    salary: Number,
   cv: String
   }, {
