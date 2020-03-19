@@ -7,7 +7,7 @@ let Candidat = new Schema({
     last_name: String,
     statusCandidat: String,
     MAIL_ADRESSE: String,
-    status_date: Date,
+    STATUS_DATE: Date,
     TELEPHONE_NUMBER: String,
     POST_NAME: String,
     CONTACTER_VIA: String,
