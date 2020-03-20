@@ -1,0 +1,14 @@
+[Unit]
+Description=RH Matching Backend
+After=network.target
+[Service]
+WorkingDirectory=/opt/backend
+User=nobody
+Group=users
+Type=simple
+UMask=000
+ExecStart=/usr/bin/npm run start
+Restart=on-failure
+StartLimitInterval=600
+[Install]
+WantedBy=multi-user.target
