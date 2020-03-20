@@ -16,7 +16,7 @@ candidatRoute.route('/add-candidat').post((req, res, next) => {
 });
 
 // Get all candidat
-candidatRoute.route('/').get((req, res) => {
+candidatRoute.route('/candidats').get((req, res) => {
   Candidat.find((error, data) => {
     if (error) {
       return next(error)
