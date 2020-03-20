@@ -9,6 +9,13 @@
 
 Later 
 
-## Build
+## How to install
 
-Later
+```
+git clone https://github.com/liberodark/RH-Matching-Backend/
+mv RH-Matching-Backend/* /opt/backend
+cd  /opt/backend/
+mv rh-matching-backend.service /etc/systemd/system/
+systemctl enable rh-matching-backend.service
+systemctl start rh-matching-backend.service
+```
