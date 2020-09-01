@@ -9,6 +9,29 @@
 
 Later 
 
+## Install MongoDB
+
+
+```
+nano /etc/yum.repos.d/mongodb-org-4.2.repo
+
+[mongodb-org-4.2]
+name=MongoDB Repository
+baseurl=https://repo.mongodb.org/yum/redhat/$releasever/mongodb-org/4.2/x86_64/
+gpgcheck=1
+enabled=1
+gpgkey=https://www.mongodb.org/static/pgp/server-4.2.asc
+
+sudo yum install -y mongodb-org
+sudo mkdir -p /var/lib/mongo
+sudo mkdir -p /var/log/mongodb
+chown -R mongod:mongod /var/lib/mongo
+chown -R mongod:mongod /var/log/mongodb
+systemctl start mongod
+systemctl enable mongod
+systemctl status mongod
+```
+
 ## How to install
 
 ```
