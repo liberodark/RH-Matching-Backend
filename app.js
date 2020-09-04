@@ -8,7 +8,10 @@ let express = require('express'),
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
 mongoose.connect(dataBaseConfig.db, {
-  useNewUrlParser: true
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false
 }).then(() => {
     console.log('Database connected sucessfully ')
   },
@@ -16,6 +19,7 @@ mongoose.connect(dataBaseConfig.db, {
     console.log('Could not connected to database : ' + error)
   }
 )
+
 
 // Set up express js port
 const candidatRoute = require('./routes/candidat.route')
@@ -34,7 +38,7 @@ app.use('/api', besoinRoute);
 // Create port
 const port = process.env.PORT || 4000;
 const server = app.listen(port, () => {
-  console.log('Connected to port ' + port+ 'server'+server)
+  console.warn('Connected to port ' + port + 'server' + server)
 })
 
 // Find 404 and hand over to error handler
@@ -43,8 +47,8 @@ app.use((req, res, next) => {
 });
 
 // error handler
-app.use(function (err, req, res, next) {
-  console.log(next);
+app.use(function(err, req, res, next) {
+  console.warn(next);
   console.error(err.message);
   if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).send(err.message);

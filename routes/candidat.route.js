@@ -6,11 +6,11 @@ let Candidat = require('../model/candidat');
 
 // Add candidat
 candidatRoute.route('/add-candidat').post((req, res, next) => {
-    Candidat.create(req.body, (error, data) => {
+  Candidat.create(req.body, (error, data) => {
     if (error) {
-      return next(error)
+      return next(error);
     } else {
-      res.json(data)
+      res.json(data);
     }
   })
 });
@@ -19,21 +19,22 @@ candidatRoute.route('/add-candidat').post((req, res, next) => {
 candidatRoute.route('/candidats').get((req, res) => {
   Candidat.find((error, data) => {
     if (error) {
-      return next(error)
+      return next(error);
     } else {
-      res.json(data)
-    }
+      res.json(data);
+    };
   })
 })
 
 // Get single candidat
 candidatRoute.route('/read-candidat/:id').get((req, res) => {
   Candidat.findById(req.params.id, (error, data) => {
+
     if (error) {
-      return next(error)
+      return next(error);
     } else {
-      res.json(data)
-    }
+      res.json(data);
+    };
   })
 })
 
@@ -43,13 +44,13 @@ candidatRoute.route('/candidats/:status').get((req, res) => {
     if (error) {
       return next(error)
     } else {
-      var response = [];  
-        response = data.filter(function(candidat){
-          if(candidat.statusCandidat === req.params.status){
-            return candidat;
-          }
-        });
-      res.json(response)
+      var response = [];
+      response = data.filter(function(candidat) {
+        if (candidat.statusCandidat === req.params.status) {
+          return candidat;
+        }
+      });
+      res.json(response);
     }
   })
 })
@@ -62,8 +63,8 @@ candidatRoute.route('/update-candidat/:id').put((req, res, next) => {
     if (error) {
       return next(error);
     } else {
-      res.json(data)
-      console.log('candidat successfully updated!')
+      res.json(data);
+      console.log('candidat successfully updated!');
     }
   })
 })
