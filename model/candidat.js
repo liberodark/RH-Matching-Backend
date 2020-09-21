@@ -13,15 +13,16 @@ let Candidat = new Schema({
   CONTACTER_VIA: String,
   client: String,
   experience: String,
-  MANAGER_NAME: [],
+  MANAGER_NAME: [String],
   CR_NAME: String,
   KO_TAG: String,
-  REF_OFFRE: [],
+  REF_OFFRE: [String],
   comment: String,
   mobility: String,
   DISPONIBILITY_DATE: Date,
   salary: Number,
-  cv: String
+  cv: String,
+  fullOffers:[]
 }, {
   collection: 'candidats'
 })

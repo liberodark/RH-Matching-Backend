@@ -9,12 +9,13 @@ let Besoin = new Schema({
   MAX_SALARY: Number,
   START_DATE: Date,
   CREATION_DATE: Date,
-  MANAGER_NAME: [],
+  MANAGER_NAME: [String],
   CR_NAME: String,
   REF_OFFRE: String,
   TECHNO_ENVIRONNEMENT: String,
   STATUS_NAME: String,
-  candidatAfectedList: []
+  // candidatAfectedList: [{ type: Schema.Types.ObjectId, ref: 'Candidat' }]
+  candidatAfectedList: [String]
 }, {
   collection: 'besoins'
 })

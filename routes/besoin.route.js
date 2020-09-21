@@ -24,7 +24,17 @@ besoinRoute.route('/besoins').get((req, res) => {
       res.json(data)
     }
   })
-})
+});
+
+/*besoinRoute.route('/besoins').get((req, res) => {
+  Besoin.find().
+  populate('candidat').
+  exec(function (err, besoin) {
+    if (err) return handleError(err);
+    console.log('The besoin is %s', besoin.candidat.name);
+    // prints "The author is Ian Fleming"
+  })
+});*/
 
 // Get besoins by Status
 besoinRoute.route('/besoins/:status').get((req, res) => {
@@ -41,7 +51,7 @@ besoinRoute.route('/besoins/:status').get((req, res) => {
       res.json(response)
     }
   })
-})
+});
 
 // Get besoins by reference
 besoinRoute.route('/besoins/ByReference/:reference').get((req, res) => {
@@ -58,7 +68,7 @@ besoinRoute.route('/besoins/ByReference/:reference').get((req, res) => {
       res.json(response)
     }
   })
-})
+});
 
 // Get single besoin
 besoinRoute.route('/read-besoin/:id').get((req, res) => {
@@ -69,7 +79,7 @@ besoinRoute.route('/read-besoin/:id').get((req, res) => {
       res.json(data)
     }
   })
-})
+});
 
 
 // Update besoin
@@ -84,7 +94,7 @@ besoinRoute.route('/update-besoin/:id').put((req, res, next) => {
       console.log('besoin successfully updated!')
     }
   })
-})
+});
 
 // Delete besoin
 besoinRoute.route('/delete-besoin/:id').delete((req, res, next) => {
@@ -97,6 +107,6 @@ besoinRoute.route('/delete-besoin/:id').delete((req, res, next) => {
       })
     }
   })
-})
+});
 
 module.exports = besoinRoute;
