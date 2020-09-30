@@ -24,6 +24,6 @@ dashboardRoute.route('/add-dashboard').post((req, res, next) => {
         return next(error);
       } else {
         res.json(data);
-      };
+      }
     })
   });
