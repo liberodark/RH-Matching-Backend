@@ -1,0 +1,124 @@
+ENV =C:=c:\boulot\follow\RH-Matching-Backend
+ENV ALLUSERSPROFILE=C:\ProgramData
+ENV AMD_ENTRYPOINT=vs/workbench/services/extensions/node/extensionHostProcess
+ENV ANGULAR=C:\Users\alain.witkowski\AppData\Roaming\npm
+ENV ANGULAR CLI=C:\Users\alain.witkowski\AppData\Roaming\npm\node_modules\angular-cli\bin
+ENV APPDATA=C:\Users\alain.witkowski\AppData\Roaming
+ENV APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL=true
+ENV CARGO=\\?\C:\Users\alain.witkowski\.rustup\toolchains\nightly-x86_64-pc-windows-msvc\bin\rls.exe
+ENV CARGO_CFG_TARGET_ARCH=x86_64
+ENV CARGO_CFG_TARGET_ENDIAN=little
+ENV CARGO_CFG_TARGET_ENV=msvc
+ENV CARGO_CFG_TARGET_FAMILY=windows
+ENV CARGO_CFG_TARGET_FEATURE=fxsr,sse,sse2
+ENV CARGO_CFG_TARGET_HAS_ATOMIC=16,32,64,8,ptr
+ENV CARGO_CFG_TARGET_HAS_ATOMIC_EQUAL_ALIGNMENT=16,32,64,8,ptr
+ENV CARGO_CFG_TARGET_HAS_ATOMIC_LOAD_STORE=16,32,64,8,ptr
+ENV CARGO_CFG_TARGET_OS=windows
+ENV CARGO_CFG_TARGET_POINTER_WIDTH=64
+ENV CARGO_CFG_TARGET_THREAD_LOCAL=
+ENV CARGO_CFG_TARGET_VENDOR=pc
+ENV CARGO_CFG_WINDOWS=
+ENV CARGO_FEATURE_ALLOC=1
+ENV CARGO_FEATURE_DEFAULT=1
+ENV CARGO_FEATURE_DEV_URANDOM_FALLBACK=1
+ENV CARGO_FEATURE_ONCE_CELL=1
+ENV CARGO_HOME=C:\Users\alain.witkowski\.cargo
+ENV CARGO_MAKEFLAGS=--jobserver-fds=__rust_jobserver_semaphore_962015905 --jobserver-auth=__rust_jobserver_semaphore_962015905
+ENV CARGO_MANIFEST_DIR=C:\Users\alain.witkowski\.cargo\registry\src\github.com-1ecc6299db9ec823\ring-0.16.15
+ENV CARGO_MANIFEST_LINKS=ring-asm
+ENV CARGO_PKG_AUTHORS=Brian Smith <brian@briansmith.org>
+ENV CARGO_PKG_DESCRIPTION=Safe, fast, small crypto using Rust.
+ENV CARGO_PKG_HOMEPAGE=
+ENV CARGO_PKG_LICENSE=
+ENV CARGO_PKG_LICENSE_FILE=LICENSE
+ENV CARGO_PKG_NAME=ring
+ENV CARGO_PKG_REPOSITORY=https://github.com/briansmith/ring
+ENV CARGO_PKG_VERSION=0.16.15
+ENV CARGO_PKG_VERSION_MAJOR=0
+ENV CARGO_PKG_VERSION_MINOR=16
+ENV CARGO_PKG_VERSION_PATCH=15
+ENV CARGO_PKG_VERSION_PRE=
+ENV CHOCOLATEYINSTALL=C:\ProgramData\chocolatey
+ENV CHOCOLATEYLASTPATHUPDATE=132460259335156319
+ENV CHROME_CRASHPAD_PIPE_NAME=\\.\pipe\crashpad_96488_BDXGSGWVLEXQDKYA
+ENV COMMONPROGRAMFILES=C:\Program Files\Common Files
+ENV COMMONPROGRAMFILES(X86)=C:\Program Files (x86)\Common Files
+ENV COMMONPROGRAMW6432=C:\Program Files\Common Files
+ENV COMPUTERNAME=LS-5CD926835L
+ENV COMSPEC=C:\windows\system32\cmd.exe
+ENV DEBUG=false
+ENV DRIVERDATA=C:\Windows\System32\Drivers\DriverData
+ENV ELECTRON_RUN_AS_NODE=1
+ENV HOMEDRIVE=C:
+ENV HOMEPATH=\Users\alain.witkowski
+ENV HOST=x86_64-pc-windows-msvc
+ENV LD_LIBRARY_PATH=C:\Users\alain.witkowski\.rustup\toolchains\nightly-x86_64-pc-windows-msvc\lib
+ENV LOCALAPPDATA=C:\Users\alain.witkowski\AppData\Local
+ENV LOGONSERVER=\\FR-LAB-DC04
+ENV NUMBER_OF_PROCESSORS=8
+ENV NUM_JOBS=8
+ENV NVM_HOME=C:\Users\adminlocalawi\AppData\Roaming\nvm
+ENV NVM_SYMLINK=C:\Program Files\nodejs
+ENV ONEDRIVE=C:\Users\alain.witkowski\OneDrive - scalian.com
+ENV ONEDRIVECOMMERCIAL=C:\Users\alain.witkowski\OneDrive - scalian.com
+ENV OPT_LEVEL=0
+ENV ORIGINAL_XDG_CURRENT_DESKTOP=undefined
+ENV OS=Windows_NT
+ENV OUT_DIR=c:\boulot\follow\RH-Matching-Backend\target\rls\debug\build\ring-f7b41f1254016b88\out
+ENV PATH=c:\boulot\follow\RH-Matching-Backend\target\rls\debug\deps;c:\boulot\follow\RH-Matching-Backend\target\rls\debug;C:\Users\alain.witkowski\.rustup\toolchains\nightly-x86_64-pc-windows-msvc\lib\rustlib\x86_64-pc-windows-msvc\lib;C:\Users\alain.witkowski\.cargo\bin;C:\Users\alain.witkowski\.rustup\toolchains\nightly-x86_64-pc-windows-msvc\bin;C:\Program Files\Volta\;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Users\adminlocalawi\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\VSCodium\bin;C:\Program Files (x86)\Yarn\bin\;C:\ProgramData\chocolatey\bin;C:\Users\alain.witkowski\.cargo\bin;C:\Users\alain.witkowski\AppData\Local\Volta\bin;C:\Users\alain.witkowski\.cargo\bin;C:\Users\alain.witkowski\AppData\Local\Microsoft\WindowsApps;C:\Users\alain.witkowski\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\alain.witkowski\AppData\Roaming\npm;C:\Users\alain.witkowski\AppData\Local\Programs\Git\cmd
+ENV PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+ENV PIPE_LOGGING=true
+ENV PROCESSOR_ARCHITECTURE=AMD64
+ENV PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 11, GenuineIntel
+ENV PROCESSOR_LEVEL=6
+ENV PROCESSOR_REVISION=8e0b
+ENV PROFILE=debug
+ENV PROGRAMDATA=C:\ProgramData
+ENV PROGRAMFILES=C:\Program Files
+ENV PROGRAMFILES(X86)=C:\Program Files (x86)
+ENV PROGRAMW6432=C:\Program Files
+ENV PROMPT=$P$G
+ENV PSMODULEPATH=C:\Program Files\WindowsPowerShell\Modules;C:\windows\system32\WindowsPowerShell\v1.0\Modules
+ENV PUBLIC=C:\Users\Public
+ENV RUSTC=rustc
+ENV RUSTDOC=rustdoc
+ENV RUSTFLAGS=
+ENV RUSTUP_HOME=C:\Users\alain.witkowski\.rustup
+ENV RUSTUP_TOOLCHAIN=nightly-x86_64-pc-windows-msvc
+ENV RUST_RECURSION_COUNT=1
+ENV SESSIONNAME=Console
+ENV SYSTEMDRIVE=C:
+ENV SYSTEMROOT=C:\windows
+ENV TARGET=x86_64-pc-windows-msvc
+ENV TEMP=C:\Users\ALAIN~1.WIT\AppData\Local\Temp
+ENV TMP=C:\Users\ALAIN~1.WIT\AppData\Local\Temp
+ENV USERDNSDOMAIN=EUROGICIEL.FR
+ENV USERDOMAIN=EUROGICIEL
+ENV USERDOMAIN_ROAMINGPROFILE=EUROGICIEL
+ENV USERNAME=alain.witkowski
+ENV USERPROFILE=C:\Users\alain.witkowski
+ENV VERBOSE_LOGGING=true
+ENV VSCODE_CWD=C:\boulot\follow
+ENV VSCODE_HANDLES_UNCAUGHT_ERRORS=true
+ENV VSCODE_IPC_HOOK=\\.\pipe\d60e53185a42889045cddc9bdca17f3c-1.49.3-main-sock
+ENV VSCODE_IPC_HOOK_EXTHOST=\\.\pipe\vscode-ipc-fbea5b38-62ca-4a48-8574-61ce1616c4e7-sock
+ENV VSCODE_LOGS=C:\Users\alain.witkowski\AppData\Roaming\VSCodium\logs\20201008T035835
+ENV VSCODE_LOG_STACK=false
+ENV VSCODE_NLS_CONFIG={"locale":"fr","availableLanguages":{},"_languagePackSupport":true}
+ENV VSCODE_NODE_CACHED_DATA_DIR=C:\Users\alain.witkowski\AppData\Roaming\VSCodium\CachedData\2af051012b66169dde0c4dfae3f5ef48f787ff69
+ENV VSCODE_PID=81056
+ENV WINDIR=C:\windows
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\aes_nohw.obj" "crypto/fipsmodule/aes/aes_nohw.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\montgomery.obj" "crypto/fipsmodule/bn/montgomery.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\montgomery_inv.obj" "crypto/fipsmodule/bn/montgomery_inv.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\limbs.obj" "crypto/limbs/limbs.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\mem.obj" "crypto/mem.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\crypto.obj" "crypto/crypto.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\curve25519.obj" "crypto/curve25519/curve25519.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\ecp_nistz.obj" "crypto/fipsmodule/ec/ecp_nistz.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\ecp_nistz256.obj" "crypto/fipsmodule/ec/ecp_nistz256.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\gfp_p256.obj" "crypto/fipsmodule/ec/gfp_p256.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\gfp_p384.obj" "crypto/fipsmodule/ec/gfp_p384.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\cpu-intel.obj" "crypto/cpu-intel.c"
+running "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.27.29110\\bin\\HostX64\\x64\\cl.exe" "-nologo" "-MD" "-Brepro" "-I" "include" "-W4" "/GS" "/Gy" "/EHsc" "/GR-" "/Zc:wchar_t" "/Zc:forScope" "/Zc:inline" "/Zc:rvalueCast" "/sdl" "/Wall" "/wd4127" "/wd4464" "/wd4514" "/wd4710" "/wd4711" "/wd4820" "/wd5045" "/Od" "/RTCsu" "-DNDEBUG" "-c" "/Foc:\\boulot\\follow\\RH-Matching-Backend\\target\\rls\\debug\\build\\ring-f7b41f1254016b88\\out\\constant_time_test.obj" "crypto/constant_time_test.c"

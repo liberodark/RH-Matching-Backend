@@ -1,6 +1,6 @@
-use crate::{db::DB,Result};
+use crate::{Result};
 use mongodb::bson::{doc, document::Document, oid::ObjectId, Bson};
-
+use super::super::DB;
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Candidate {
     pub id:String,
@@ -34,7 +34,7 @@ const ID: &str = "_id";
 const FIRST_NAME: &str = "firstName";
 const LAST_NAME: &str = "lastName";
 const STATUS_CANDIDATE: &str ="statusCandidate";
-const STATUS_INDEX: &str="statusIndex",
+const STATUS_INDEX: &str="statusIndex";
 const STATUS_DATE: &str = "statusDate";
 const EMAIL: &str = "Email";
 const PHONE_NUMBER: &str = "phoneNumber";
@@ -55,7 +55,7 @@ const MOBILITY: &str = "mobility";
 const TAGS: &str = "tags";
 
 impl Candidate {
-    fn doc_to_candidate(db::DB, doc: &Document) -> Result<Candidate> {
+    fn doc_to_candidate(db: DB, doc: &Document) -> Result<Candidate> {
         let id = doc.get_object_id(ID)?;
         let firstName = doc.get_str(FIRSTNAME)?;
         let lastName = doc.get_str(LASTNAME)?;
@@ -129,5 +129,18 @@ impl Candidate {
                 .collect(),
         };
         Ok(candidate)
+    }
+    pub async fn fetch_candidates(&self) -> Result<Vec<Candidate>> {
+        let mut cursor = self
+            .get_collection_candidate()
+            .find(None, None)
+            .await
+            .map_err(MongoQueryError)?;
+
+        let mut result: Vec<Candidate> = Vec::new();
+        while let Some(doc) = cursor.next().await {
+            result.push(self.doc_to_candidate(&doc?)?);
+        }
+        Ok(result)
     }
 }

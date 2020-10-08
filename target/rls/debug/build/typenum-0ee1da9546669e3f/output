@@ -1,0 +1,2 @@
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=c:\boulot\follow\RH-Matching-Backend\target\rls\debug\build\typenum-0ee1da9546669e3f\out\consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=c:\boulot\follow\RH-Matching-Backend\target\rls\debug\build\typenum-0ee1da9546669e3f\out\op.rs

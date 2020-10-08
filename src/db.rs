@@ -1,12 +1,12 @@
 use mongodb::{options::ClientOptions, Client, Collection};
 use std::env;
-use crate::schemas;
+mod schemas;
 #[derive(Clone, Debug)]
 pub struct DB {
     pub client: Client,
 }
 #[macro_use]
-mod schemas.Candidate;
+
 const COLL_NEED:&str = "need";
 const COLL_CANDIDATE:&str = "candidate";
 const DB_NAME:&str= "follow";
