@@ -3,7 +3,6 @@ use super::super::{DB,WebResult};
 use serde::{Deserialize, Serialize};
 use warp::{http::StatusCode, reject, reply::json, Reply};
 #[derive(Serialize, Deserialize, Debug)]
-
 pub struct CandidateRequest {
     pub firstName: String,
     pub lastName: String,

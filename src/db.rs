@@ -1,6 +1,10 @@
+use crate::{error::Error::*, Result};
+use chrono::prelude::*;
+use futures::StreamExt;
+//use mongodb::bson::{doc, document::Document, oid::ObjectId, Bson};
 use mongodb::{options::ClientOptions, Client, Collection};
 use std::env;
-mod schemas;
+
 #[derive(Clone, Debug)]
 pub struct DB {
     pub client: Client,
@@ -24,17 +28,17 @@ impl DB {
     fn get_collection_candidate(&self) -> Collection {
         self.client.database(DB_NAME).collection(COLL_CANDIDATE)
     }
-    pub async fn fetch_candidates(&self) -> Result<Vec<Candidate>> {
-        let mut cursor = self
-            .get_collection_candidate()
-            .find(None, None)
-            .await
-            .map_err(MongoQueryError)?;
+    // pub async fn fetch_candidates(&self) -> Result<Vec<Candidate>> {
+    //     let mut cursor = self
+    //         .get_collection_candidate()
+    //         .find(None, None)
+    //         .await
+    //         .map_err(MongoQueryError)?;
 
-        let mut result: Vec<Candidate> = Vec::new();
-        while let Some(doc) = cursor.next().await {
-            result.push(self.doc_to_candidate(&doc?)?);
-        }
-        Ok(result)
-    }
+    //     let mut result: Vec<Candidate> = Vec::new();
+    //     while let Some(doc) = cursor.next().await {
+    //         result.push(self.doc_to_candidate(&doc?)?);
+    //     }
+    //     Ok(result)
+    // }
 }

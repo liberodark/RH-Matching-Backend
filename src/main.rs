@@ -13,7 +13,7 @@ type WebResult<T> = std::result::Result<T, Rejection>;
 mod db;
 mod error;
 mod handlers;
-
+mod schemas;
 
 #[tokio::main]
 async fn main() -> Result<()> {

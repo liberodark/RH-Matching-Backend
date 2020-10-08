@@ -1,4 +1,8 @@
-use crate::{Result};
+
+use crate::{error::Error::*, Result};
+use chrono::prelude::*;
+use futures::StreamExt;
+use serde::{Deserialize, Serialize};
 use mongodb::bson::{doc, document::Document, oid::ObjectId, Bson};
 use super::super::DB;
 #[derive(Serialize, Deserialize, Debug)]
@@ -7,7 +11,7 @@ pub struct Candidate {
     pub firstName: String,
     pub lastName: String,
     pub statusCandidate: String,
-    pub statusIndex:usize,
+    pub statusIndex:String,
     pub statusDate: String,
     pub Email: String,
     pub phoneNumber: String,
@@ -55,10 +59,11 @@ const MOBILITY: &str = "mobility";
 const TAGS: &str = "tags";
 
 impl Candidate {
-    fn doc_to_candidate(db: DB, doc: &Document) -> Result<Candidate> {
+
+   pub fn doc_to_candidate(db: DB, doc: &Document) -> Result<Candidate> {
         let id = doc.get_object_id(ID)?;
-        let firstName = doc.get_str(FIRSTNAME)?;
-        let lastName = doc.get_str(LASTNAME)?;
+        let firstName = doc.get_str(FIRST_NAME)?;
+        let lastName = doc.get_str(LAST_NAME)?;
         let statusCandidate = doc.get_str(STATUS_CANDIDATE)?;
         let statusIndex = doc.get_str(STATUS_INDEX);
         let statusDate = doc.get_str(STATUS_DATE);
@@ -70,12 +75,12 @@ impl Candidate {
         let experience =  doc.get_str(EXPERIENCE);        
         let salary = doc.get_i32(SALARY)?;
         let availabilityDate =  doc.get_str(AVAILABILITY_DATE);
-        let mangerName = doc.get_str(MANAGER_NAME);
+        let mangerName = doc.get_array(MANAGER_NAME);
         let CrName = doc.get_str(CR_NAME);
         let KoTag = doc.get_str(KOTAG);
         let Cv = doc.get_str(CV);
-        let needReference = doc.get_str(NEED_REFERENCE);
-        let needReferenceId = doc.get_str(NEED_REFERENCE_ID);
+        let needReference = doc.get_array(NEED_REFERENCE);
+        let needReferenceId = doc.get_array(NEED_REFERENCE_ID);
         let comment = doc.get_str(COMMENT);
         let tags = doc.get_array(TAGS)?;
 
@@ -84,12 +89,12 @@ impl Candidate {
             firstName: firstName.to_owned(),
             lastName: lastName.to_owned(),
             statusCandidate: statusCandidate.to_owned(),
-            statusIndex:usize,
+            statusIndex: statusIndex.to_owned(),
             statusDate: statusDate.to_owned(),
             Email: Email.to_owned(),
             phoneNumber: phoneNumber.to_owned(),
-            postTitle: postTitle,
-            origin: origin,
+            postTitle: postTitle.to_owned(),
+            origin: origin.to_owned(),
             customer: customer.to_owned(),
             experience: experience.to_owned(),
             salary: salary.to_owned(),
@@ -101,9 +106,9 @@ impl Candidate {
                     _ => None,
                 })
                 .collect(),
-            CrName:  CrName,
-            KoTag: KoTag,
-            cv: cv,
+            CrName:  CrName.to_owned(),
+            KoTag: KoTag.to_owned(),
+            cv: cv.to_owned(),
             needReference: needReference
                 .iter()
                 .filter_map(|entry| match entry {
@@ -118,7 +123,7 @@ impl Candidate {
                     _ => None,
                 })
                 .collect(),
-            comment: comment,
+            comment: comment.to_owned(),
             mobility:  mobility.to_owned(),
             tags: tags
                 .iter()
@@ -130,17 +135,17 @@ impl Candidate {
         };
         Ok(candidate)
     }
-    pub async fn fetch_candidates(&self) -> Result<Vec<Candidate>> {
-        let mut cursor = self
-            .get_collection_candidate()
-            .find(None, None)
-            .await
-            .map_err(MongoQueryError)?;
+    // pub async fn fetch_candidates(&self) -> Result<Vec<Candidate>> {
+    //     let mut cursor = self
+    //         .get_collection_candidate()
+    //         .find(None, None)
+    //         .await
+    //         .map_err(MongoQueryError)?;
 
-        let mut result: Vec<Candidate> = Vec::new();
-        while let Some(doc) = cursor.next().await {
-            result.push(self.doc_to_candidate(&doc?)?);
-        }
-        Ok(result)
-    }
+    //     let mut result: Vec<Candidate> = Vec::new();
+    //     while let Some(doc) = cursor.next().await {
+    //         result.push(self.doc_to_candidate(&doc?)?);
+    //     }
+    //     Ok(result)
+    // }
 }
