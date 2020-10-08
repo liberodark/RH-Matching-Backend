@@ -40,7 +40,7 @@ pub struct Candidate {
     pub mobility: String,
     pub tags: Vec<String>,
 }
-
+#[derive(Serialize, Deserialize, Debug)]
 pub struct Need {
     id: String,
     postName: String,
