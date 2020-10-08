@@ -34,9 +34,8 @@ systemctl status mongod
 
 ```
 git clone https://github.com/liberodark/RH-Matching-Backend/
-mv RH-Matching-Backend/* /opt/backend
-cd  /opt/backend/
-npm install
+cd RH-Matching-Backend/*
+cargo build
 mv rh-matching-backend.service /etc/systemd/system/
 systemctl enable rh-matching-backend.service
 systemctl start rh-matching-backend.service
