@@ -1,9 +1,8 @@
-use crate::{error::Error::*, Result};
-use chrono::prelude::*;
-use futures::StreamExt;
+ use crate::{error::Error::*, Result};
+// use chrono::prelude::*;
+// use futures::StreamExt;
 //use mongodb::bson::{doc, document::Document, oid::ObjectId, Bson};
-use mongodb::{options::ClientOptions, Client, Collection};
-use std::env;
+use mongodb::{options::ClientOptions, Client};
 
 #[derive(Clone, Debug)]
 pub struct DB {
@@ -25,9 +24,9 @@ impl DB {
             client: Client::with_options(client_options)?,
         })
     }
-    fn get_collection_candidate(&self) -> Collection {
-        self.client.database(DB_NAME).collection(COLL_CANDIDATE)
-    }
+    // fn get_collection_candidate(&self) -> Collection {
+    //     self.client.database(DB_NAME).collection(COLL_CANDIDATE)
+    // }
     // pub async fn fetch_candidates(&self) -> Result<Vec<Candidate>> {
     //     let mut cursor = self
     //         .get_collection_candidate()
