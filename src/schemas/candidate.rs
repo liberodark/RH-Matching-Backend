@@ -1,6 +1,6 @@
 
 use crate::{error::Error::*, Result};
-use chrono::prelude::*;
+
 use futures::StreamExt;
 use serde::{Deserialize, Serialize};
 use mongodb::bson::{doc, document::Document, oid::ObjectId, Bson};
@@ -65,23 +65,24 @@ impl Candidate {
         let firstName = doc.get_str(FIRST_NAME)?;
         let lastName = doc.get_str(LAST_NAME)?;
         let statusCandidate = doc.get_str(STATUS_CANDIDATE)?;
-        let statusIndex = doc.get_str(STATUS_INDEX);
-        let statusDate = doc.get_str(STATUS_DATE);
-        let Email = doc.get_str(EMAIL);
-        let phoneNumber=doc.get_str(PHONE_NUMBER);
-        let postTitle = doc.get_str(POST_TITLE);
-        let origin = doc.get_str(ORIGIN);
-        let customer = doc.get_str(CUSTOMER);
-        let experience =  doc.get_str(EXPERIENCE);        
-        let salary = doc.get_i32(SALARY)?;
-        let availabilityDate =  doc.get_str(AVAILABILITY_DATE);
-        let mangerName = doc.get_array(MANAGER_NAME);
-        let CrName = doc.get_str(CR_NAME);
-        let KoTag = doc.get_str(KOTAG);
-        let Cv = doc.get_str(CV);
-        let needReference = doc.get_array(NEED_REFERENCE);
-        let needReferenceId = doc.get_array(NEED_REFERENCE_ID);
-        let comment = doc.get_str(COMMENT);
+        let statusIndex = doc.get_str(STATUS_INDEX)?;
+        let statusDate = doc.get_str(STATUS_DATE)?;
+        let Email = doc.get_str(EMAIL)?;
+        let phoneNumber=doc.get_str(PHONE_NUMBER)?;
+        let postTitle = doc.get_str(POST_TITLE)?;
+        let origin = doc.get_str(ORIGIN)?;
+        let customer = doc.get_str(CUSTOMER)?;
+        let experience =  doc.get_str(EXPERIENCE)?;        
+        let salary = doc.get_str(SALARY)?;
+        let availabilityDate =  doc.get_str(AVAILABILITY_DATE)?;
+        let mangerName = doc.get_array(MANAGER_NAME)?;
+        let CrName = doc.get_str(CR_NAME)?;
+        let KoTag = doc.get_str(KOTAG)?;
+        let Cv = doc.get_str(CV)?;
+        let needReference = doc.get_array(NEED_REFERENCE)?;
+        let needReferenceId = doc.get_array(NEED_REFERENCE_ID)?;
+        let comment = doc.get_str(COMMENT)?;
+        let mobility =  doc.get_str(MOBILITY)?;
         let tags = doc.get_array(TAGS)?;
 
         let candidate = Candidate {
