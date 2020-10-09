@@ -72,6 +72,7 @@ const TAGS_NEED: &str = "tags";
 //   const  ORIGIN_CONFIG: &str = "origin";
 
 impl DB {
+    // setup db
     pub async fn init() -> Result<Self> {
         // let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
         let mut client_options = ClientOptions::parse("mongodb://127.0.0.1:27017").await?;
@@ -82,6 +83,7 @@ impl DB {
         })
     }
 
+    // get all candidates
     pub async fn fetch_candidate(&self) -> Result<Vec<Candidate>> {
         let mut cursor = self
             .get_collection_candidate()
@@ -134,7 +136,6 @@ impl DB {
 
     pub async fn create_candidate(&self, entry: &CandidateRequest) -> Result<()> {
         let doc = doc! {
-            ID_CANDIDATE: entry.id.clone(),
             FIRST_NAME: entry.firstName.clone(),
             LAST_NAME:  entry.lastName.clone(),
             STATUS_CANDIDATE: entry.statusCandidate.clone(),
@@ -306,7 +307,7 @@ impl DB {
 
     pub async fn create_need(&self, entry: &NeedRequest) -> Result<()> {
         let doc = doc! {
-            ID_NEED : entry.id.clone(),
+
             POST_NAME : entry.postName.clone(),
             LOCATION: entry.location.clone(),
             CUSTOMER: entry.customer.clone(),
