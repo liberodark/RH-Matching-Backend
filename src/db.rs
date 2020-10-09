@@ -15,7 +15,7 @@ pub struct DB {
 // config DB
 const COLL_NEED: &str = "need";
 const COLL_CANDIDATE: &str = "candidate";
-const COLL_CONFIG: &str = "follow-config";
+//const COLL_CONFIG: &str = "follow-config";
 const DB_NAME: &str = "follow";
 
 //candidate constante
@@ -103,7 +103,7 @@ impl DB {
             "_id": oid,
         };
         let doc = doc! {
-            ID_CANDIDATE: entry.id.clone(),
+          
             FIRST_NAME: entry.firstName.clone(),
             LAST_NAME:  entry.lastName.clone(),
             STATUS_CANDIDATE: entry.statusCandidate.clone(),
@@ -282,7 +282,6 @@ impl DB {
             "_id": oid,
         };
         let doc = doc! {
-            ID_NEED : entry.id.clone(),
             POST_NAME : entry.postName.clone(),
             LOCATION: entry.location.clone(),
             CUSTOMER: entry.customer.clone(),

@@ -75,10 +75,20 @@ pub struct Need {
 #[tokio::main]
 async fn main() -> Result<()> {
     let db = DB::init().await?;
-  
+    // let options = warp::options()
+    //     .and(warp::header::<String>("origin")).map(|origin| {
+    //         Ok(http::Response::builder()
+    //             .header("access-control-allow-methods", "HEAD, GET, POST, DELETE, PUT")
+    //             .header("access-control-allow-headers", "authorization")
+    //             .header("access-control-allow-credentials", "true")
+    //             .header("access-control-max-age", "300")
+    //             .header("access-control-allow-origin", origin)
+    //             .header("vary", "origin")
+    //             .body(""))
+    // });
     
    // let candidate_path = warp::path("api/V1");
-    let candidate_routes = 
+    let all_routes = 
         ((warp::path!("api" / "candidat"))
         .and(warp::post())
         .and(warp::body::json())
@@ -118,9 +128,14 @@ async fn main() -> Result<()> {
         .or((warp::path!("api" / "need"))
             .and(warp::get())
             .and(with_db(db.clone()))
-            .and_then(handler::need_list_handler));
+            .and_then(handler::need_list_handler))
+        .with(warp::cors()
+        .allow_any_origin()
+        .allow_headers(vec!["User-Agent", "Sec-Fetch-Mode", "Referer", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers"])
+        .allow_methods(vec!["POST", "GET","DELETE"])
+        );
 
-    let routes = candidate_routes.recover(error::handle_rejection);
+    let routes = all_routes.recover(error::handle_rejection);
 
     println!("Started on port 4000");
     warp::serve(routes).run(([127, 0, 0, 1], 4000)).await;
