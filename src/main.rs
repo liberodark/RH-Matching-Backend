@@ -16,29 +16,29 @@ mod handler;
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Candidate {
-    pub id: String,
-    pub firstName: String,
-    pub lastName: String,
-    pub statusCandidate: String,
-    pub statusIndex: String,
-    pub statusDate: String,
-    pub Email: String,
-    pub phoneNumber: String,
-    pub postTitle: String,
-    pub origin: String,
-    pub customer: String,
-    pub experience: String,
-    pub salary: String,
-    pub availabilityDate: String,
-    pub mangerName: Vec<String>,
-    pub CrName: String,
-    pub KoTag: String,
-    pub cvCandidat: String,
-    pub needReference: Vec<String>,
-    pub needReferenceId: Vec<String>,
-    pub comment: String,
-    pub mobility: String,
-    pub tags: Vec<String>,
+     id: String,
+     firstName: String,
+     lastName: String,
+     statusCandidate: String,
+     statusIndex: String,
+     statusDate: String,
+     Email: String,
+     phoneNumber: String,
+     postTitle: String,
+     origin: String,
+     customer: String,
+     experience: String,
+     salary: String,
+     availabilityDate: String,
+     mangerName: Vec<String>,
+     CrName: String,
+     KoTag: String,
+     cvCandidat: String,
+     needReference: Vec<String>,
+     needReferenceId: Vec<String>,
+     comment: String,
+     mobility: String,
+     tags: Vec<String>,
 }
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Need {
@@ -58,6 +58,19 @@ pub struct Need {
     affectedCandidatList: Vec<String>,
     tags: Vec<String>,
 }
+
+//config Structure 
+// pub struct Follow_Config{
+//     need_Status:  Vec<String>,
+//     candidate_Status: Vec<String>,
+//     Cr_Names: Vec<String>,
+//     Manager_Name: Vec<String>,
+//     customer: Vec<String>, 
+//     mobility: Vec<String>,
+//     experience: Vec<String>,
+//     KoTag: Vec<String>,
+//     origin: Vec<String>,
+// }
 #[tokio::main]
 async fn main() -> Result<()> {
     let db = DB::init().await?;

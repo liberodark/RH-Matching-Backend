@@ -15,6 +15,7 @@ pub struct DB {
 // config DB
 const COLL_NEED: &str = "need";
 const COLL_CANDIDATE: &str = "candidate";
+const COLL_CONFIG: &str = "follow-config";
 const DB_NAME: &str = "follow";
 
 //candidate constante
@@ -58,6 +59,17 @@ const STATUS_NEED: &str = "statusNeed";
 const STATUS_INDEX_NEED: &str = "statusIndex";
 const AFFECTED_CANDIDAT_LIST: &str = "affectedCandidatList";
 const TAGS_NEED: &str = "tags";
+
+//follow config Const
+//   const  NEED_STATUS_CONFIG: &str = "need_Status";
+//   const  CANDIDATE_STATUS_CONFIG: &str = "candidate_Status";
+//   const  CR_NAMES_CONFIG: &str = "Cr_Names";
+//   const  MANAGER_NAME_CONFIG: &str = "Manager_Name";
+//   const  CUSTOMER_CONFIG: &str = "customer";
+//   const  MOBILITY_CONFIG: &str = "mobility";
+//   const  EXPERIENCE_CONFIG: &str = "experience";
+//   const  KOTAG_CONFIG: &str = "KoTag";
+//   const  ORIGIN_CONFIG: &str = "origin";
 
 impl DB {
     pub async fn init() -> Result<Self> {

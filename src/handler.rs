@@ -49,6 +49,18 @@ pub struct NeedRequest {
   pub  tags: Vec<String>,
 }
 
+/// structure request config
+// pub struct Follow_ConfigRequest{
+//    pub need_Status:  Vec<String>,
+//    pub candidate_Status: Vec<String>,
+//    pub Cr_Names: Vec<String>,
+//    pub Manager_Name: Vec<String>,
+//    pub customer: Vec<String>,
+//    pub mobility: Vec<String>,
+//    pub experience: Vec<String>,
+//    pub KoTag: Vec<String>,
+//    pub origin: Vec<String>,
+// }
 pub async fn candidate_list_handler(db: DB) -> WebResult<impl Reply> {
     let candidates = db.fetch_candidate().await.map_err(|e| reject::custom(e))?;
     Ok(json(&candidates))
@@ -92,3 +104,4 @@ pub async fn delete_need_handler(id: String, db: DB) -> WebResult<impl Reply> {
     db.delete_need(&id).await.map_err(|e| reject::custom(e))?;
     Ok(StatusCode::OK)
 }
+
