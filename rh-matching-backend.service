@@ -7,7 +7,7 @@ User=nobody
 Group=users
 Type=simple
 UMask=000
-ExecStart=/usr/bin/npm run start
+ExecStart=/opt/backend/follow
 Restart=on-failure
 StartLimitInterval=600
 [Install]
