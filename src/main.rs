@@ -65,11 +65,11 @@ async fn main() -> Result<()> {
    // let candidate_path = warp::path("api/V1");
 
     let candidate_routes = 
-        (warp::path!("api" / "candidat"))
+        ((warp::path!("api" / "candidat"))
         .and(warp::post())
         .and(warp::body::json())
         .and(with_db(db.clone()))
-        .and_then(handler::create_candidate_handler)
+        .and_then(handler::create_candidate_handler))
         .or((warp::path!("api" / "candidat"))
             .and(warp::put())
             .and(warp::path::param())
@@ -84,7 +84,27 @@ async fn main() -> Result<()> {
         .or((warp::path!("api" / "candidat"))
             .and(warp::get())
             .and(with_db(db.clone()))
-            .and_then(handler::candidate_list_handler));
+            .and_then(handler::candidate_list_handler))
+        .or((warp::path!("api" / "need"))    
+            .and(warp::post())
+            .and(warp::body::json())
+            .and(with_db(db.clone()))
+            .and_then(handler::create_need_handler))
+        .or((warp::path!("api" / "need"))
+            .and(warp::put())
+            .and(warp::path::param())
+            .and(warp::body::json())
+            .and(with_db(db.clone()))
+            .and_then(handler::edit_need_handler))
+        .or((warp::path!("api" / "need"))
+            .and(warp::delete())
+            .and(warp::path::param())
+            .and(with_db(db.clone()))
+            .and_then(handler::delete_need_handler))
+        .or((warp::path!("api" / "need"))
+            .and(warp::get())
+            .and(with_db(db.clone()))
+            .and_then(handler::need_list_handler));
 
     let routes = candidate_routes.recover(error::handle_rejection);
 

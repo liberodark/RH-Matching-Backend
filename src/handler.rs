@@ -30,6 +30,7 @@ pub struct CandidateRequest {
     pub tags: Vec<String>,
 
 }
+#[derive(Serialize, Deserialize, Debug)]
 pub struct NeedRequest {
   pub  id: String,
   pub  postName: String,
