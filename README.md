@@ -33,6 +33,9 @@ systemctl status mongod
 ## How to install
 
 ```
+
+install https://rustup.rs/
+
 git clone https://github.com/liberodark/RH-Matching-Backend/
 cd RH-Matching-Backend
 cargo build
