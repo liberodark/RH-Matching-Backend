@@ -5,26 +5,25 @@ use warp::{http::StatusCode, reject, reply::json, Reply};
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct CandidateRequest {
-    pub id: String,
-    pub firstName: String,
-    pub lastName: String,
-    pub statusCandidate: String,
-    pub statusIndex:String,
-    pub statusDate: String,
-    pub Email: String,
-    pub phoneNumber: String,
-    pub postTitle: String,
+    pub first_name: String,
+    pub last_name: String,
+    pub status_candidate: String,
+    pub status_index:String,
+    pub status_date: String,
+    pub e_mail: String,
+    pub phone_number: String,
+    pub post_title: String,
     pub origin: String,
     pub customer: String,
-    pub experience: String,
+    pub experience_candidate: String,
     pub salary: String,
-    pub availabilityDate: String,
-    pub mangerName: Vec<String>,
-    pub CrName: String,
-    pub KoTag: String,
-    pub cvCandidat: String,
-    pub needReference: Vec<String>,
-    pub needReferenceId: Vec<String>,
+    pub availability_date: String,
+    pub manger_name: Vec<String>,
+    pub cr_name: String,
+    pub ko_tag: String,
+    pub cv_candidat: String,
+    pub need_reference: Vec<String>,
+    pub need_reference_id: Vec<String>,
     pub comment: String,
     pub mobility: String,
     pub tags: Vec<String>,
@@ -32,20 +31,19 @@ pub struct CandidateRequest {
 }
 #[derive(Serialize, Deserialize, Debug)]
 pub struct NeedRequest {
-  pub  id: String,
-  pub  postName: String,
+  pub  post_name: String,
   pub  location:String,
   pub  customer: String,
   pub  experience: String,
-  pub  maxSalary: String,
-  pub  StartDate: String,
-  pub  creationDate: String,
-  pub  managerName: String,
-  pub  CrName: String,
-  pub  referenceNeed: String,
-  pub  statusNeed: String,
-  pub  statusIndex: String,
-  pub  affectedCandidatList: Vec<String>,
+  pub  max_salary: String,
+  pub  start_date: String,
+  pub  creation_date: String,
+  pub  manager_name: String,
+  pub  cr_name: String,
+  pub  reference_need: String,
+  pub  status_need: String,
+  pub  status_index: String,
+  pub  affected_candidat_list: Vec<String>,
   pub  tags: Vec<String>,
 }
 
@@ -58,7 +56,7 @@ pub struct NeedRequest {
 //    pub customer: Vec<String>,
 //    pub mobility: Vec<String>,
 //    pub experience: Vec<String>,
-//    pub KoTag: Vec<String>,
+//    pub ko_tag: Vec<String>,
 //    pub origin: Vec<String>,
 // }
 pub async fn candidate_list_handler(db: DB) -> WebResult<impl Reply> {
@@ -84,7 +82,7 @@ pub async fn delete_candidate_handler(id: String, db: DB) -> WebResult<impl Repl
 }
 
 pub async fn need_list_handler(db: DB) -> WebResult<impl Reply> {
-    let needs = db.fetch_Need().await.map_err(|e| reject::custom(e))?;
+    let needs = db.fetch_need().await.map_err(|e| reject::custom(e))?;
     Ok(json(&needs))
 }
 

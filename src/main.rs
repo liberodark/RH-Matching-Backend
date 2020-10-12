@@ -18,25 +18,25 @@ mod handler;
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Candidate {
     pub id: String,
-    pub firstName: String,
-    pub lastName: String,
-    pub statusCandidate: String,
-    pub statusIndex: String,
-    pub statusDate: String,
-    pub Email: String,
-    pub phoneNumber: String,
-    pub postTitle: String,
+    pub first_name: String,
+    pub last_name: String,
+    pub status_candidate: String,
+    pub status_index: String,
+    pub status_date: String,
+    pub e_mail: String,
+    pub phone_number: String,
+    pub post_title: String,
     pub origin: String,
     pub customer: String,
-    pub experience: String,
+    pub experience_candidate: String,
     pub salary: String,
-    pub availabilityDate: String,
-    pub mangerName: Vec<String>,
-    pub CrName: String,
-    pub KoTag: String,
-    pub cvCandidat: String,
-    pub needReference: Vec<String>,
-    pub needReferenceId: Vec<String>,
+    pub availability_date: String,
+    pub manger_name: Vec<String>,
+    pub cr_name: String,
+    pub ko_tag: String,
+    pub cv_candidat: String,
+    pub need_reference: Vec<String>,
+    pub need_reference_id: Vec<String>,
     pub comment: String,
     pub mobility: String,
     pub tags: Vec<String>,
@@ -44,19 +44,19 @@ pub struct Candidate {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Need {
     pub id: String,
-    pub postName: String,
+    pub post_name: String,
     pub location:String,
     pub customer: String,
     pub experience: String,
-    pub maxSalary: String,
-    pub StartDate: String,
-    pub creationDate: String,
-    pub managerName: String,
-    pub CrName: String,
-    pub referenceNeed: String,
-    pub statusNeed: String,
-    pub statusIndex:String,
-    pub affectedCandidatList: Vec<String>,
+    pub max_salary: String,
+    pub start_date: String,
+    pub creation_date: String,
+    pub manager_name: String,
+    pub cr_name: String,
+    pub reference_need: String,
+    pub status_need: String,
+    pub status_index:String,
+    pub affected_candidat_list: Vec<String>,
     pub tags: Vec<String>,
 }
 
@@ -69,43 +69,30 @@ pub struct Need {
 //    pub customer: Vec<String>, 
 //    pub mobility: Vec<String>,
 //    pub experience: Vec<String>,
-//    pub KoTag: Vec<String>,
+//    pub ko_tag: Vec<String>,
 //    pub origin: Vec<String>,
 // }
 #[tokio::main]
 async fn main() -> Result<()> {
     let db = DB::init().await?;
-    // let options = warp::options()
-    //     .and(warp::header::<String>("origin")).map(|origin| {
-    //         Ok(http::Response::builder()
-    //             .header("access-control-allow-methods", "HEAD, GET, POST, DELETE, PUT")
-    //             .header("access-control-allow-headers", "authorization")
-    //             .header("access-control-allow-credentials", "true")
-    //             .header("access-control-max-age", "300")
-    //             .header("access-control-allow-origin", origin)
-    //             .header("vary", "origin")
-    //             .body(""))
-    // });
-    
-   // let candidate_path = warp::path("api/V1");
     let all_routes = 
-        ((warp::path!("api" / "candidat"))
+        ((warp::path!("api" / "candidate"))
         .and(warp::post())
         .and(warp::body::json())
         .and(with_db(db.clone()))
         .and_then(handler::create_candidate_handler))
-        .or((warp::path!("api" / "candidat"))
+        .or((warp::path!("api" / "candidate"))
             .and(warp::put())
             .and(warp::path::param())
             .and(warp::body::json())
             .and(with_db(db.clone()))
             .and_then(handler::edit_candidate_handler))
-        .or((warp::path!("api" / "candidat"))
+        .or((warp::path!("api" / "candidate"))
             .and(warp::delete())
             .and(warp::path::param())
             .and(with_db(db.clone()))
             .and_then(handler::delete_candidate_handler))
-        .or((warp::path!("api" / "candidat"))
+        .or((warp::path!("api" / "candidate"))
             .and(warp::get())
             .and(with_db(db.clone()))
             .and_then(handler::candidate_list_handler))
@@ -132,8 +119,7 @@ async fn main() -> Result<()> {
         .with(warp::cors()
         .allow_any_origin()
         .allow_headers(vec!["User-Agent", "Sec-Fetch-Mode", "Referer", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers"])
-        .allow_methods(vec!["POST", "GET","DELETE"])
-        );
+        .allow_methods(vec!["POST", "GET","DELETE","PUT"]));
 
     let routes = all_routes.recover(error::handle_rejection);
 
